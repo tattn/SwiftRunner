@@ -25,6 +25,13 @@ matrix:
         - swift build
         - swift test
 
+    - env: JOB=xcode
+      os: osx
+      script:
+        - swift build
+        - swift package generate-xcodeproj
+        - xcodebuild build-for-testing test-without-building -workspace SwiftRunner.xcworkspace -scheme SwiftRunner -sdk macosx -configuration Release -enableCodeCoverage YES ENABLE_TESTABILITY=YES | xcpretty
+
 install:
   - if [ `uname` == "Linux" ] ; then 
       curl -sL https://gist.github.com/kylef/5c0475ff02b7c7671d2a/raw/621ef9b29bbb852fdfd2e10ed147b321d792c1e4/swiftenv-install.sh | bash ;
@@ -34,7 +41,7 @@ install:
 
 after_success:
 - |
-  if [ "$JOB" == "swiftpm_linux" ]; then
+  if [ "$JOB" == "xcode" ]; then
     bash <(curl -s https://codecov.io/bash)
   fi
   sleep 10
