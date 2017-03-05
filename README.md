@@ -31,6 +31,7 @@ case .failure(let error): break
 # Features
 
 - [x] Evaluate text written in Swift on runtime
+- [x] Work on MacOS & Linux
 - [ ] Security measures
 
 Waiting for your great pull requests :D
