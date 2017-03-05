@@ -27,6 +27,13 @@ case .failure(let error): break
 }
 ```
 
+# Features
+
+- [x] Evaluate text written in Swift on runtime
+- [ ] Security measures
+
+Waiting for your great pull requests :D
+
 # Try in Playground
 
 This project contains a playground file. So you can try the features.
