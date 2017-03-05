@@ -3,7 +3,7 @@ import SwiftRunner
 
 class SwiftRunnerTests: XCTestCase {
     func testPrintHello() {
-        let result = SwiftRunner.shared.launchSwift(string: "print(\"hello\")")
+        let result = SwiftRunner.shared.launch(string: "print(\"hello\")")
         if case .success(let stream) = result {
             XCTAssertEqual(stream.output, "hello\n")
             XCTAssertEqual(stream.error, "")
@@ -13,7 +13,7 @@ class SwiftRunnerTests: XCTestCase {
     }
 
     func testCompileError() {
-        let result = SwiftRunner.shared.launchSwift(string: "print(hello)")
+        let result = SwiftRunner.shared.launch(string: "print(hello)")
         if case .success(let stream) = result {
             XCTAssertEqual(stream.output, "")
             XCTAssertFalse(stream.error.isEmpty) // error message may change, so it checks whether it is not empty

@@ -6,7 +6,7 @@ public class SwiftRunner {
 
     public var swiftPath = "/usr/bin/swift"
     
-    public func launchSwift(string: String) -> Result<StandardStream, SwiftRunnerError> {
+    public func launch(string: String) -> Result<StandardStream, SwiftRunnerError> {
         guard let temporaryFile = try? TemporaryFile(text: string) else {
             return .failure(.cannotCreateTemporaryFile)
         }
