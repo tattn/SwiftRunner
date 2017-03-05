@@ -21,8 +21,13 @@ public class SwiftProcess {
         process.standardError  = pipes.error
     }
 
-    public func launch(file filename: String) -> Result<StandardStream, SwiftRunnerError> {
-        process.arguments  = ["run", "./" + filename]
+    public func launch(at path: URL) -> Result<StandardStream, SwiftRunnerError> {
+        let absolutePath = path.absoluteString.replacingOccurrences(of: "file://", with: "")
+        return launch(atFile: absolutePath)
+    }
+
+    public func launch(atFile path: String) -> Result<StandardStream, SwiftRunnerError> {
+        process.arguments  = ["run", path]
         process.launch()
 
         let outputData = pipes.output.fileHandleForReading.readDataToEndOfFile()

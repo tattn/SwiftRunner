@@ -7,14 +7,17 @@ public class SwiftRunner {
     public var swiftPath = "/usr/bin/swift"
     
     public func launch(string: String) -> Result<StandardStream, SwiftRunnerError> {
-        guard let temporaryFile = try? TemporaryFile(text: string) else {
-            return .failure(.cannotCreateTemporaryFile)
+        let temporaryFile: TemporaryFile
+        do {
+            temporaryFile = try TemporaryFile(text: string)
+        } catch {
+            return .failure(.cannotCreateTemporaryFile(error))
         }
-        
-        let result = SwiftProcess(swiftPath: swiftPath).launch(file: temporaryFile.filepath)
+
+        let result = SwiftProcess(swiftPath: swiftPath).launch(at: temporaryFile.path)
         
         if case .success(let stream) = result {
-            let stderr = stream.error.replacingOccurrences(of: temporaryFile.filepath, with: "")
+            let stderr = stream.error.replacingOccurrences(of: temporaryFile.path.relativePath, with: "")
             return .success(StandardStream(output: stream.output, error: stderr))
         }
         

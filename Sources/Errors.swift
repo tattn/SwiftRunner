@@ -9,6 +9,6 @@
 import Foundation
 
 public enum SwiftRunnerError: Swift.Error {
-    case cannotCreateTemporaryFile
+    case cannotCreateTemporaryFile(Swift.Error)
     case unexpected
 }
