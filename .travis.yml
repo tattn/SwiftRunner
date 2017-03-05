@@ -34,7 +34,7 @@ install:
 
 after_success:
 - |
-  if [ "$JOB" == "xcode_linux" ]; then
+  if [ "$JOB" == "swiftpm_linux" ]; then
     bash <(curl -s https://codecov.io/bash)
   fi
   sleep 10
