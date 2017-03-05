@@ -27,6 +27,19 @@ case .failure(let error): break
 }
 ```
 
+# Try in Playground
+
+This project contains a playground file. So you can try the features.
+
+To try immediately, you can run folloing:
+
+```zsh
+$ cd <your working directory>
+$ curl -sf https://raw.githubusercontent.com/tattn/SwiftRunner/master/scripts/try-playground.sh | sh -s
+```
+
+After building (⌘+B), you can try it :)
+
 # Requirements
 
 - Xcode 8.0+
