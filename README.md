@@ -1,6 +1,7 @@
 SwiftRunner
 ===
 
+[![Build Status](https://travis-ci.org/tattn/SwiftRunner.svg?branch=master)](https://travis-ci.org/tattn/SwiftRunner)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 ![platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux-333333.svg)
 [![License](https://img.shields.io/github/license/tattn/SwiftRunner.svg)]()
