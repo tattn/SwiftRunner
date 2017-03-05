@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  StandardStream.swift
 //  SwiftRunner
 //
 //  Created by Tatsuya Tanaka on 2017/03/04.
