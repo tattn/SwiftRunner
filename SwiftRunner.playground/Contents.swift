@@ -4,7 +4,7 @@ import Cocoa
 import SwiftRunner
 
 let text   = "print(\"hello!\")"
-let result = SwiftRunner.shared.launch(string: text) // => hello!
+let result = SwiftRunner.shared.launch(string: text)
 
 switch result {
 case .success(let stream):
