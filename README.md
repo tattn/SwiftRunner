@@ -7,7 +7,7 @@ SwiftRunner
 [![Swift Version](https://img.shields.io/badge/Swift-3.0+-F16D39.svg)](https://developer.apple.com/swift)
 
 
-SwiftRunner can execute text written in Swift.
+SwiftRunner can execute the string written in Swift on runtime.
 
 # How to use
 
@@ -38,7 +38,7 @@ Waiting for your great pull requests :D
 
 This project contains a playground file. So you can try the features.
 
-To try immediately, you can run folloing:
+To try immediately, you can run the following:
 
 ```zsh
 $ cd <your working directory>
