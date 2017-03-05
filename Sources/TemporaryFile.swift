@@ -36,5 +36,5 @@ private func createTemporaryDirectory() throws -> URL {
 
 private func createUniqueName() -> String {
     let uniqueName = Date().timeIntervalSince1970.description.replacingOccurrences(of: ".", with: "")
-    return String(format: "%@_%@", ProcessInfo.processInfo.globallyUniqueString, uniqueName)
+    return "\(ProcessInfo.processInfo.globallyUniqueString)_\(uniqueName)"
 }

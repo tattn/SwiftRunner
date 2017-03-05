@@ -17,7 +17,7 @@ matrix:
       os: linux
       script:
         - swift build
-        - swift test
+        - SWIFT_PATH=`which swift` swift test
 
     - env: JOB=swiftpm_macos
       os: osx

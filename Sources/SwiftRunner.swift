@@ -4,8 +4,13 @@ import Result
 public class SwiftRunner {
     public static let shared = SwiftRunner()
 
-    public var swiftPath = "/usr/bin/swift"
-    
+    public var swiftPath: String = {
+        if let path = ProcessInfo.processInfo.environment["SWIFT_PATH"] {
+            return path
+        }
+        return "/usr/bin/swift"
+    }()
+
     public func launch(string: String) -> Result<StandardStream, SwiftRunnerError> {
         let temporaryFile: TemporaryFile
         do {

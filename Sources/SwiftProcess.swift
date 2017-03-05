@@ -11,7 +11,12 @@ import Result
 
 public class SwiftProcess {
 
+    #if os(Linux)
+    // see: http://stackoverflow.com/questions/39764801/how-to-use-process-in-swift-3-for-linux
+    fileprivate let process = Task()
+    #else
     fileprivate let process = Process()
+    #endif
     fileprivate let pipes: (output: Pipe, error: Pipe) = (Pipe(), Pipe())
 
     init(swiftPath: String = "/usr/bin/swift") {
