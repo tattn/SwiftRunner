@@ -11,7 +11,7 @@ public class SwiftRunner {
         return "/usr/bin/swift"
     }()
 
-    public func launch(string: String) -> Result<StandardStream, SwiftRunnerError> {
+    public func run(string: String) -> Result<StandardStream, SwiftRunnerError> {
         let temporaryFile: TemporaryFile
         do {
             temporaryFile = try TemporaryFile(text: string)

@@ -18,7 +18,7 @@ SwiftRunner can execute the string written in Swift on runtime.
 import SwiftRunner
 
 let text   = "print(\"hello!\")"
-let result = SwiftRunner.shared.launch(string: text) // => hello!
+let result = SwiftRunner.shared.run(string: text) // => hello!
 
 switch result {
 case .success(let stream):
